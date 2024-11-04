@@ -25,6 +25,11 @@ namespace SalaryOutput_ex
                 return  200 + service_years * 2 + group_bonus;
             }
         }
+        public int getSalary()
+        {
+            return 200 + service_years * 2 + group_bonus;
+
+        }
     }
     class Program
     {
@@ -47,11 +52,11 @@ namespace SalaryOutput_ex
         static void Main(string[] args)
         {
             Salary w1 = new Salary("홍길동",10,20); // 객체 생성
-            
-            Console.WriteLine("{0} 월급은 {1} 만원 입니다",w1.name , w1.getSalary(true));
+            // 여름 흎가비 포함하지 않은 월급 계산
+            Console.WriteLine("{0} 월급은 {1} 만원 입니다",w1.name , w1.getSalary());
 
             Salary w2 = new Salary("전우치",5,18); // 객체 생성
-            
+            // 여름 휴가비 포함한 월급 계산
             Console.WriteLine("{0} 월급은 {1} 만원 입니다",w2.name , w2.getSalary(true));
 
             Console.Read();
