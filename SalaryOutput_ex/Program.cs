@@ -13,9 +13,17 @@ namespace SalaryOutput_ex
             service_years = s;
             group_bonus = g;
         }
-        public int getSalary()
+        public int getSalary(bool bSummer) // 메소드 인자 전달
+
         {
-            return 200 + service_years * 2 + group_bonus;
+            if (bSummer == true)
+            {
+                return 200 + service_years * 2 + group_bonus + 40;
+            }
+            else
+            {
+                return  200 + service_years * 2 + group_bonus;
+            }
         }
     }
     class Program
@@ -40,11 +48,11 @@ namespace SalaryOutput_ex
         {
             Salary w1 = new Salary("홍길동",10,20); // 객체 생성
             
-            Console.WriteLine("{0} 월급은 {1} 만원 입니다",w1.name , w1.getSalary());
+            Console.WriteLine("{0} 월급은 {1} 만원 입니다",w1.name , w1.getSalary(true));
 
             Salary w2 = new Salary("전우치",5,18); // 객체 생성
             
-            Console.WriteLine("{0} 월급은 {1} 만원 입니다",w2.name , w2.getSalary());
+            Console.WriteLine("{0} 월급은 {1} 만원 입니다",w2.name , w2.getSalary(true));
 
             Console.Read();
         }
